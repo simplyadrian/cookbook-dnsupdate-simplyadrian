@@ -1,4 +1,4 @@
-name             'nativex-dnsupdate'
+name             'dnsupdate-nativex'
 maintainer       'NativeX'
 maintainer_email 'adrian.herrera@nativex.com'
 license          'All rights reserved'

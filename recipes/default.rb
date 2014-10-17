@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: nativex-dnsupdate
+# Cookbook Name:: dnsupdate-nativex
 # Recipe:: default
 #
 # Copyright 2014, NativeX
@@ -7,5 +7,5 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "nativex-dnsupdate::addpub"
-include_recipe "nativex-dnsupdate::addprv"
+include_recipe "dnsupdate-nativex::addpub"
+include_recipe "dnsupdate-nativex::addprv"

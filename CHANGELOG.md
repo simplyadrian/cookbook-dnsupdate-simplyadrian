@@ -1,11 +1,11 @@
-nativex-dnsupdate CHANGELOG
+dnsupdate-nativex CHANGELOG
 ===========================
 
-This file is used to list changes made in each version of the nativex-dnsupdate cookbook.
+This file is used to list changes made in each version of the dnsupdate-nativex cookbook.
 
 0.1.0
 -----
-- [your_name] - Initial release of nativex-dnsupdate
+- [your_name] - Initial release of dnsupdate-nativex
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
