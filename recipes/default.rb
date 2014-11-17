@@ -7,5 +7,13 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "dnsupdate-nativex::addpub"
+if platorm_family?('debian')
+  chef_gem "nokogiri" do
+    action :install
+    version "1.6.1"
+  end
+end
+
+include_recipe "route53"
+include_recipe "dnsupdate-nativex::deleteprv"
 include_recipe "dnsupdate-nativex::addprv"
