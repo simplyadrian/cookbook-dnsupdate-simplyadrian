@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-if platorm_family?('debian')
+if platform_family?('debian')
   chef_gem "nokogiri" do
     action :install
     version "1.6.1"
