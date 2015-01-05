@@ -14,6 +14,4 @@ if platform_family?('debian')
   end
 end
 
-include_recipe "route53"
-include_recipe "dnsupdate-nativex::deleteprv"
 include_recipe "dnsupdate-nativex::addprv"
