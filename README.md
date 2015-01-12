@@ -1,23 +1,17 @@
 dnsupdate-nativex Cookbook
 ==========================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+This cookbook creates a DNS entry in amazons Route53 services on the first chef run and then updates the created record with the private IP if changed on each subsequent run.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
 #### packages
-- `toaster` - dnsupdate-nativex needs toaster to brown your bagel.
+- `nokogiri` - dnsupdate-nativex needs nokogiri to run on debian systems.
+- `aws-sdk` - dnsupdate-nativex utilizes the aws-sdk to perform it's tasks.
+- `rubygem` - dnsupdate-nativex utilizes the rubygem package.
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
-
-e.g.
 #### dnsupdate-nativex::default
 <table>
   <tr>
@@ -27,19 +21,29 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['dnsupdate-nativex']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['dnsupdate-nativex']['int_domain']</tt></td>
+    <td>String</td>
+    <td>the route43 domain name in which to create and maintain a record under.</td>
+    <td><tt>nativexintern.com</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['dnsupdate-nativex']['int_zone_id']</tt></td>
+    <td>String</td>
+    <td>the route53 zone id in which to create and maintain a record under.</td>
+    <td><tt>Z1NZHUXT02UQJ</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['dnsupdate-nativex']['record_type']</tt></td>
+    <td>String</td>
+    <td>the route53 record type to be created e.g. SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA.</td>
+    <td><tt>A</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### dnsupdate-nativex::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
 Just include `dnsupdate-nativex` in your node's `run_list`:
 
 ```json
@@ -51,18 +55,6 @@ Just include `dnsupdate-nativex` in your node's `run_list`:
 }
 ```
 
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
-
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Adrian Herrera
