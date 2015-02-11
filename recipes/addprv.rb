@@ -19,7 +19,7 @@ ruby_block "create and update route53 dns record" do
     full_nodename = "#{node.name}-prv.#{node['dnsupdate-nativex']['int_domain']}"
     Chef::Log.info("The FQDN of this node is: #{full_nodename}.")
 
-    r53 = AWS::Route53.new(
+    r53 = Aws::Route53.new(
       :access_key_id => aws["aws_access_key_id"],
       :secret_access_key => aws["aws_secret_access_key"]
     )
