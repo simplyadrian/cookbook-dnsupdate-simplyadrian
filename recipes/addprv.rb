@@ -8,12 +8,12 @@
 #
 
 include_recipe "route53"
-chef_gem "aws-sdk"
+chef_gem "aws-sdk-v1"
 
 ruby_block "create and update route53 dns record" do
   block do
     require 'rubygems'
-    require 'aws-sdk'
+    require 'aws-sdk-v1'
 
     aws = Chef::EncryptedDataBagItem.load("credentials", "aws")
     full_nodename = "#{node.name}-prv.#{node['dnsupdate-nativex']['int_domain']}"
