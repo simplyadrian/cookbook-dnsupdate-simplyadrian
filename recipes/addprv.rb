@@ -7,7 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "route53"
 chef_gem "aws-sdk-v1"
 
 ruby_block "create and update route53 dns record" do
