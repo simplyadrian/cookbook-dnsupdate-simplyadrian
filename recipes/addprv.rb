@@ -7,11 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-gem_package "nokogiri" do
-  action :install
-  version "1.6.1"
-end
-
 gem_package "aws-sdk-v1" do
   action :install
 end

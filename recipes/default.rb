@@ -7,11 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-if platform_family?('debian')
-  chef_gem "nokogiri" do
-    action :install
-    version "1.6.1"
-  end
+gem_package "nokogiri" do
+  action :install
+  version "1.6.1"
 end
 
 include_recipe "dnsupdate-nativex::addprv"
