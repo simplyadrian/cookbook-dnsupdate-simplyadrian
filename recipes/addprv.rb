@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-gem_package "aws-sdk-v1" do
+chef_gem "aws-sdk-v1" do
   action :install
 end
 

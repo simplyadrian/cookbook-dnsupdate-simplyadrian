@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-gem_package "nokogiri" do
+chef_gem "nokogiri" do
   action :install
   version "1.6.1"
 end
