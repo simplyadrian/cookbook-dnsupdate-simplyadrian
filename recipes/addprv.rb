@@ -7,7 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-chef_gem "aws-sdk-v1"
+gem_package "aws-sdk-v1" do
+	  action :install
+end
 
 ruby_block "create and update route53 dns record" do
   block do
