@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: dnsupdate-nativex
+# Cookbook Name:: dnsupdate-simplyadrian
 # Recipe:: default
 #
-# Copyright 2014, NativeX
+# Copyright 2014, simplyadrian
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -12,4 +12,4 @@ chef_gem "nokogiri" do
   version "1.6.1"
 end
 
-include_recipe "dnsupdate-nativex::addprv"
+include_recipe "dnsupdate-simplyadrian::addprv"

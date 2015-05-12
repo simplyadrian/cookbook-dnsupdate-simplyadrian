@@ -1,8 +1,8 @@
 #
 # Internal Domain Name
-default['dnsupdate-nativex']['int_domain'] = 'nativexintern.com'
+default['dnsupdate-simplyadrian']['int_domain'] = 'simplyadrian.com'
 # Internal ZoneID
-default['dnsupdate-nativex']['int_zone_id'] = 'Z1NZHUXT02UQJ'
+default['dnsupdate-simplyadrian']['int_zone_id'] = 'ROUTE53ZONEID'
 # Record Type SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA.
-default['dnsupdate-nativex']['record_type'] = 'A'
+default['dnsupdate-simplyadrian']['record_type'] = 'A'
 

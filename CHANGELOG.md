@@ -1,11 +1,11 @@
-dnsupdate-nativex CHANGELOG
+dnsupdate-simplyadrian CHANGELOG
 ===========================
 
-This file is used to list changes made in each version of the dnsupdate-nativex cookbook.
+This file is used to list changes made in each version of the dnsupdate-simplyadrian cookbook.
 
 1.1.0
 -----
-- [Adrian] - Initial release of dnsupdate-nativex
+- [Adrian] - Initial release of dnsupdate-simplyadrian
 
 2.1.0
 -----

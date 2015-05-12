@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: dnsupdate-nativex
+# Cookbook Name:: dnsupdate-simplyadrian
 # Recipe:: addprv.rb
 #
-# Copyright 2014, NativeX
+# Copyright 2014, simplyadrian
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -17,7 +17,7 @@ ruby_block "create and update route53 dns record" do
     require 'aws-sdk-v1'
 
     aws = Chef::EncryptedDataBagItem.load("credentials", "aws")
-    full_nodename = "#{node.name}-prv.#{node['dnsupdate-nativex']['int_domain']}"
+    full_nodename = "#{node.name}-prv.#{node['dnsupdate-simplyadrian']['int_domain']}"
     Chef::Log.info("The FQDN of this node is: #{full_nodename}.")
 
     r53 = AWS::Route53.new(
@@ -26,9 +26,9 @@ ruby_block "create and update route53 dns record" do
     )
     
     response = r53.client.list_resource_record_sets(
-      :hosted_zone_id => node['dnsupdate-nativex']['int_zone_id'],
+      :hosted_zone_id => node['dnsupdate-simplyadrian']['int_zone_id'],
       :start_record_name => full_nodename, 
-      :start_record_type => node['dnsupdate-nativex']['record_type'],
+      :start_record_type => node['dnsupdate-simplyadrian']['record_type'],
       :max_items => 1
     )
     puts response[:resource_record_sets]
@@ -38,13 +38,13 @@ ruby_block "create and update route53 dns record" do
       :action => 'UPSERT',
       :resource_record_set => {
         :name => full_nodename,
-        :type => node['dnsupdate-nativex']['record_type'],
+        :type => node['dnsupdate-simplyadrian']['record_type'],
         :ttl => 60,
       :resource_records => [{:value => node['ipaddress']}]
     }}
 
     r53.client.change_resource_record_sets({
-      :hosted_zone_id => node['dnsupdate-nativex']['int_zone_id'],
+      :hosted_zone_id => node['dnsupdate-simplyadrian']['int_zone_id'],
       :change_batch => {
         :changes => [change1]
       }
